@@ -1,0 +1,23 @@
+- name: Conf
+  hosts: Nokia_*
+  gather_facts: no
+  connection: local
+
+
+  vars:
+    ansible_ssh_user: "{{ awx_user_tacacs }}"
+    ansible_ssh_pass: "{{ awx_pass_tacacs }}"
+
+
+  roles:
+    - variables
+    - Equi2-config-Port
+    - Equi1-config-Port
+    - Equi3-config-system
+    - Equi2-config-interface
+    - Equi2-Config-policy
+    - Equi2-config-BE
+    - router-static-config
+    - Equi2-config-BGP
+    - Equi1-config-BGP
+    
